@@ -13,6 +13,7 @@
 		70C9A19827E0B9740099EEB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C9A19627E0B9740099EEB2 /* Main.storyboard */; };
 		70C9A19A27E0B9740099EEB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C9A19927E0B9740099EEB2 /* Assets.xcassets */; };
 		70C9A19D27E0B9740099EEB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C9A19B27E0B9740099EEB2 /* LaunchScreen.storyboard */; };
+		70C9A1AB27E0BB020099EEB2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9A1AA27E0BB020099EEB2 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		70C9A19927E0B9740099EEB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70C9A19C27E0B9740099EEB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70C9A19E27E0B9740099EEB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70C9A1AA27E0BB020099EEB2 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,64 @@
 		70C9A18F27E0B9740099EEB2 /* PersonalQuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				70C9A19027E0B9740099EEB2 /* AppDelegate.swift */,
-				70C9A19227E0B9740099EEB2 /* SceneDelegate.swift */,
-				70C9A19427E0B9740099EEB2 /* ViewController.swift */,
-				70C9A19627E0B9740099EEB2 /* Main.storyboard */,
-				70C9A19927E0B9740099EEB2 /* Assets.xcassets */,
-				70C9A19B27E0B9740099EEB2 /* LaunchScreen.storyboard */,
-				70C9A19E27E0B9740099EEB2 /* Info.plist */,
+				70C9A1A927E0BABB0099EEB2 /* Models */,
+				70C9A1A827E0B9DA0099EEB2 /* Extensions */,
+				70C9A1A427E0B98B0099EEB2 /* App */,
+				70C9A1A527E0B9C40099EEB2 /* ViewControllers */,
+				70C9A1A627E0B9CC0099EEB2 /* Storyboards */,
+				70C9A1A727E0B9D50099EEB2 /* Resources */,
 			);
 			path = PersonalQuizApp;
+			sourceTree = "<group>";
+		};
+		70C9A1A427E0B98B0099EEB2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				70C9A19027E0B9740099EEB2 /* AppDelegate.swift */,
+				70C9A19227E0B9740099EEB2 /* SceneDelegate.swift */,
+				70C9A19E27E0B9740099EEB2 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		70C9A1A527E0B9C40099EEB2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				70C9A19427E0B9740099EEB2 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		70C9A1A627E0B9CC0099EEB2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				70C9A19627E0B9740099EEB2 /* Main.storyboard */,
+				70C9A19B27E0B9740099EEB2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		70C9A1A727E0B9D50099EEB2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70C9A19927E0B9740099EEB2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		70C9A1A827E0B9DA0099EEB2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70C9A1A927E0BABB0099EEB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70C9A1AA27E0BB020099EEB2 /* Question.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C9A19527E0B9740099EEB2 /* ViewController.swift in Sources */,
+				70C9A1AB27E0BB020099EEB2 /* Question.swift in Sources */,
 				70C9A19127E0B9740099EEB2 /* AppDelegate.swift in Sources */,
 				70C9A19327E0B9740099EEB2 /* SceneDelegate.swift in Sources */,
 			);
@@ -291,12 +343,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS64CSG2MY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PersonalQuizApp/Info.plist;
+				INFOPLIST_FILE = PersonalQuizApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +358,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,12 +371,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS64CSG2MY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PersonalQuizApp/Info.plist;
+				INFOPLIST_FILE = PersonalQuizApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +386,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
