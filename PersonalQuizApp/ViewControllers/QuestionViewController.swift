@@ -8,9 +8,7 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-    
     //MARK: IBOutlets
-    
     @IBOutlet var singleStackView: UIStackView!
     @IBOutlet var singleButtons: [UIButton]!
     
@@ -32,7 +30,6 @@ class QuestionViewController: UIViewController {
     @IBOutlet var questionsProgress: UIProgressView!
     
     //MARK: Private Properties
-    
     private let questions = Question.getQuestions()
     private var questionIndex = 0
     private var currentAnswers: [Answer] {
@@ -40,13 +37,15 @@ class QuestionViewController: UIViewController {
     }
     private var answersChosen: [Answer] = []
     
+    
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.setGradientBackground(.cyan, .white)
         updateUI()
     }
     
     //MARK: IBActions
-    
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         guard let currentIndex = singleButtons.firstIndex(of: sender) else { return }
         let currentAnswer = currentAnswers[currentIndex]
@@ -70,7 +69,6 @@ class QuestionViewController: UIViewController {
     }
     
     //MARK: Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultVC = segue.destination as? ResultViewController else { return }
         resultVC.choosenAnswers = answersChosen //1. Передать массив с ответами на экран с результатами
@@ -79,29 +77,19 @@ class QuestionViewController: UIViewController {
 }
 
 //MARK: Private Methods
-
 extension QuestionViewController {
     private func updateUI() {
-        //hide all stacks
         for stackView in [singleStackView, multipleStackView, sliderStackView] {
             stackView?.isHidden = true
         }
-        //get current questions
-        let currentQuestion = questions[questionIndex]
         
-        //set current question for question label
+        let currentQuestion = questions[questionIndex]
         questionLabel.text = currentQuestion.title
         
-        //calculateProgress
         let totalProgress = Float(questionIndex) / Float(questions.count)
-        
-        //set progress
         questionsProgress.setProgress(totalProgress, animated: true)
         
-        //set title
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
-        
-        //show stacks corresonding to question type
         showCurrentAnswers(for: currentQuestion.resposeType)
         
     }
