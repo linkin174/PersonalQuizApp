@@ -30,9 +30,8 @@ class ResultViewController: UIViewController {
     private func getChoosenAnimal(from answers: [Answer]) -> Animal {
         var animals: [Animal: Int] = [:]
         var choosenAnimal: Animal?
-
+        
         answers.forEach({ animals[$0.animal] = (animals[$0.animal] ?? 1 ) + 1 })
-        debugPrint(animals)
         choosenAnimal = animals.sorted(by: { $0.value > $1.value }).first?.key
         
         return choosenAnimal ?? .dog

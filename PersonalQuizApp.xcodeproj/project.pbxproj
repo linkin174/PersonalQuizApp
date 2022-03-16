@@ -64,11 +64,11 @@
 		70C9A18F27E0B9740099EEB2 /* PersonalQuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				70C9A1B627E0C7E70099EEB2 /* Extensions */,
-				70C9A1A927E0BABB0099EEB2 /* Models */,
-				70C9A1A427E0B98B0099EEB2 /* App */,
 				70C9A1A527E0B9C40099EEB2 /* ViewControllers */,
 				70C9A1A627E0B9CC0099EEB2 /* Storyboards */,
+				70C9A1A927E0BABB0099EEB2 /* Models */,
+				70C9A1B627E0C7E70099EEB2 /* Extensions */,
+				70C9A1A427E0B98B0099EEB2 /* App */,
 				70C9A1A727E0B9D50099EEB2 /* Resources */,
 			);
 			path = PersonalQuizApp;
