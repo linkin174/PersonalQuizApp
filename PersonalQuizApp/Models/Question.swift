@@ -50,12 +50,12 @@ enum ResponseType {
     case ranged
 }
 
-struct Answer {
+struct Answer: Hashable {
     let title: String
     let animal: Animal
 }
 
-enum Animal: Character {
+enum Animal: Character, Hashable {
     case dog = "🐶"
     case cat = "🐱"
     case turtle = "🐢"

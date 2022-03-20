@@ -28,13 +28,30 @@ class ResultViewController: UIViewController {
 
     //MARK: Private methods
     private func getChoosenAnimal(from answers: [Answer]) -> Animal {
-        var animals: [Animal: Int] = [:]
-        var choosenAnimal: Animal?
+        var frequentAnimals: [Animal: Int] = [:]
+
+        answers.forEach({frequentAnimals[$0.animal] = (frequentAnimals[$0.animal] ?? 1 ) + 1})
+        //MARK: Короткая запись
+       // guard let choosenAnimal = frequentAnimals.sorted(by: {$0.value > $1.value}).first?.key else { return .dog}
         
-        answers.forEach({ animals[$0.animal] = (animals[$0.animal] ?? 1 ) + 1 })
-        choosenAnimal = animals.sorted(by: { $0.value > $1.value }).first?.key
+        //MARK: Полная запись
+        /*
+        for answer in answers {
+            if let animalTypeCount = frequentAnimals[answer.animal] {
+                frequentAnimals.updateValue(animalTypeCount, forKey: answer.animal)
+            } else {
+                frequentAnimals[answer.animal] = 1
+            }
+        }
+        guard let choosenAnimal = frequentAnimals.sorted(by: {$0.value > $1.value}).first?.key else { return .dog }
+        */
         
+        //MARK: В одну строку
+        let choosenAnimal = Dictionary(grouping: answers) { $0.animal }
+            .sorted(by: { $0.value.count > $1.value.count })
+            .first?.key
         return choosenAnimal ?? .dog
     }
     
 }
+
